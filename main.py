@@ -8,9 +8,6 @@ from ytmusicapi import YTMusic
 
 from typing import List, Set
 from config import *
-
-
-
 import time
 
 
@@ -18,7 +15,7 @@ class SpotifyToYoutube:
     def __init__(self):
         # ---------------- SETUP
         self.ytmusic_instance = YTMusic("oauth.json")
-        self.service = webdriver.chrome.service.Service(executable_path="../chromedriver.exe")
+        self.service = webdriver.chrome.service.Service(executable_path="chromedriver.exe")
         self.driver = webdriver.Chrome(service=self.service)
         
     def accept_cookies(self):
@@ -77,10 +74,7 @@ class SpotifyToYoutube:
             album.click()
             albums_urls.append(self.driver.current_url)
             self.driver.back()
-            
-        print(albums_urls)    
-            
-            
+         
         # We were having problems when storing the elements into an empty [] 
         # so we are using a set to have unique elements 
         unique_songs_names: Set[str] = set() 
@@ -107,12 +101,7 @@ class SpotifyToYoutube:
                 print(f"Timed out waiting for songs container: {str(te)}")
             except Exception as e:
                 print(f"Error finding songs container: {str(e)}")
-
-        print(unique_songs_names)    
-        print(len(unique_songs_names))    
-           
                 
-
         try:
           # Create the playlist
             playlist_with_albums = self.ytmusic_instance.create_playlist(title="Spotify to Youtube Playlist", description="Spotify to Youtube playlist")
@@ -136,7 +125,7 @@ class SpotifyToYoutube:
             except Exception as e:
                 print(f"Error adding song '{song}' with the ID of '{search_results[0]["videoId"]}' to playlist: {str(e)}")
         
-        print(playlist_with_albums)         
+        print("You can check your Youtube Music account now!")         
 
     def main(self):
       # Initialize the service and execute the webdriver
@@ -171,7 +160,7 @@ class SpotifyToYoutube:
                     self.login_with_spotify(email, password)
                     break
                 if user_choose == 2:
-                    self.login_with_facebook("jesusdavidmorales199@gmail.com", "420123Ce.")
+                    self.login_with_facebook(email, password)
                     break
                 else:
                     print("Invalid choice. Please type 1 for Spotify or 2 for Facebook.")
