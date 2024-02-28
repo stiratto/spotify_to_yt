@@ -1,0 +1,12 @@
+COOKIE_BANNER_CLOSE_CLASSNAME = "banner-close-button"
+LOGIN_BUTTON_CLASSNAME = "bzuYkS"
+FACEBOOK_METHOD_XPATH = '//*[@id="__next"]/main/main/section/div/div/div[2]/a[2]'
+FACEBOOK_EMAIL_INPUT_ID = "email"
+FACEBOOK_PASSWORD_INPUT_ID = "pass"
+ALBUMS_CONTAINER_CLASSNAME = 'ojrThQm1wxR2gZ6GntJB'
+SONGS_CONTAINER_CLASSNAME = "t_yrXoUO3qGsJS4Y6iXX"
+LOGIN_USERNAME_ID = "login-username"
+LOGIN_PASSWORD_ID = "login-password"
+LOGIN_BUTTON_ID = "login-button"
+ALREADY_HAVE_ACCOUNT_XPATH = '//*[@id="__next"]/main/main/section/div/div/p/span/a'
+# sc-jRwapC cglwjc
