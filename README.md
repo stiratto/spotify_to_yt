@@ -1,5 +1,3 @@
-# This script is totally unstable and many errors can occur when using it even when following the steps
-
 Welcome to the Spotify to YouTube Music migration project!
 
 # Prerequisites:
